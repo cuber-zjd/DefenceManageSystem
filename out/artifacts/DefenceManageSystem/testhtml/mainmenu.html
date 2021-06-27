@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>菜单模板</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .wrap {
+            min-height: 100%;
+            height: auto !important;
+            margin-bottom: -20px;
+        }
+
+        .footer {
+            border-top: 1px solid #e5e5e5;
+            color: #777;
+            background-color: #f5f5f5;
+        }
+
+        a:hover {
+            text-decoration-line: none;
+        }
+
+        a:link {
+            text-decoration-line: none;
+
+        }
+
+        a:visited {
+            color: #409ee4;
+        }
+        .h-pd{
+            padding: 0px !important;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrap container col-md-12 h-pd" style="height: 100%">
+    <!--左侧菜单栏-->
+    <div id="contain" class="col-md-2 h-pd" style="height: 100%;background-color:#304156 ;border-radius: unset">
+        <!--树形菜单-->
+        <div class="panel-group" id="accordion">
+            <div class="panel" style="background-color: #304156; color: #b1cbd0 ">
+                <!--菜单-->
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#selector"
+                           href=".collapseone">
+                            功能菜单<span class="glyphicon glyphicon-chevron-down" style="float: right"> </span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel collapse collapseone" style="background-color: #263445">
+                    <div class="panel-body">
+                        <a id="zicaidan">查看成绩</a>
+                    </div>
+                </div>
+                <div class="panel collapse collapseone" style="background-color: #263445">
+                    <div class="panel-body">
+                        <a href="">个人中心</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class=" col-md-10 h-pd">
+        <!--面包屑导航-->
+
+
+        <nav class="navbar navbar-default" style="margin-bottom: 0px">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="float: right">
+                        sadasd
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+
+        <!--标签页-->
+        <iframe id="context" class="col-md-12 h-pd" frameborder=0 scrolling='auto' src="index.html"></iframe>
+    </div>
+
+
+</div>
+<!--页脚-->
+<div class="footer ">
+    <div class="container" style="text-align: center">
+        Copyright &copy;2021 2018级软件工程3班 3组.
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var tabs = $("ul.nav-tabs");
+
+        function setcontainh() {
+            var Height = document.documentElement.clientHeight;
+            $("#contain").css("height", Height - 20 + 'px');
+            $("#context").css("height", Height - 20 -$(".navbar-default").height()+'px')
+        }
+
+        window.onload = setcontainh;
+        $("#zicaidan").click(function (){
+           $("#context").attr("src","form.html")
+        });
+    });
+
+</script>
+</body>
+</html>
